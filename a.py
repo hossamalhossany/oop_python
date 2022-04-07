@@ -2,8 +2,8 @@ class Student:
     no_of_student = 0  # class attribute
 
     def __init__(self, name, age, courses):
-        self.name = name  # instance attribute
-        self.age = age
+        self.__name = name  # public  attribute
+        self.age = age # private attribute
         self.courses = courses
         Student.no_of_student += 1  # here we use class attribute, so we must use class name first
 
@@ -17,10 +17,10 @@ class Student:
             print(f'this student {self.name} has age ==> {self.age} is  old of {num}')
 
     def get_name(self):
-        return print(self.name)
+        return print(self.__name)
 
     def set_name(self, name):
-        self.name = name
+        self.__name = name
 
 
 a = Student('hossam', 25, 'html')
